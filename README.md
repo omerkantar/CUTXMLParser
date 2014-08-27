@@ -1,16 +1,16 @@
-CUTXMLParser
-============
-First XML
 
- <Data>
-    <id>0</id>
-    <name>omer</name>
- </Data>
-//Data, id, name = ElementName;
-//0, omer        = characters 
+First XML
+===
+ 	<Data>
+    	<id>0</id>
+    	<name>omer</name>
+	 </Data>
+    Data, id, name = elementName;
+    0, omer        = characters 
 
 
 CUTXMLParser Create 
+=====
         CUTXMLParser * cutXMLParser = [[CUTXMLParser alloc] init];
         [cutXMLParser setDelegate:self];
         [cutXMLParser startCutXMLParseWithURL:urlString];
@@ -18,28 +18,30 @@ CUTXMLParser Create
       //[cutXMLParser startCutXMLParseWithURL:urlString elementNameToken:token];
       //[cutXMLParser startCutXMLParseWithURL:urlString elementNameTokenArray:tokenArray];
       
-CUTXMLParse Delegate Methods
+CUTXMLParser Delegate Methods
+--
+		
+		//your xml,elements and characters 
+		
+ 		(void)cutXMLParser :(NSXMLParser         *)parser
+	   finisDataDictionary :(NSMutableDictionary *)dataDictionary
+          elementNameArray :(NSMutableArray      *)dataElementArray
+       foundCharactersData :(NSMutableArray      *)dataCharactersArray;
 
-- (void)cutXMLParser :(NSXMLParser         *)parser
- finisDataDictionary :(NSMutableDictionary *)dataDictionary
- 
-    elementNameArray :(NSMutableArray      *)dataElementArray
- foundCharactersData :(NSMutableArray      *)dataCharactersArray;
-
-- (void)cutXMLParser :(NSXMLParser *)parser
-    elementNameToken :(NSString    *)elementNameToken
-     foundCharacters :(NSString    *)dataCharacters;
-     
-- (void)cutXMLParser :(NSXMLParser        *)parser
-   elementTokenArray :(NSArray            *)elementTokenArray
-foundCharactersArray :(NSMutableArray     *)dataCharactersArray;
+    	(void)cutXMLParser :(NSXMLParser *)parser
+	      elementNameToken :(NSString    *)elementNameToken
+     	   foundCharacters :(NSString    *)dataCharacters;
+		 
+		 (void)cutXMLParser :(NSXMLParser        *)parser
+		  elementTokenArray :(NSArray            *)elementTokenArray
+	   foundCharactersArray :(NSMutableArray     *)dataCharactersArray;
 
 
 if u dont wantto use delegate methods so create CUTXMLModel , its easy.
 
 Easy CUTXMLModel Create
 
-    CUTXMLModel * model0 = [[CUTXMLModel alloc] initWithXMLURLString:url];
+    CUTXMLModel   * model0 = [[CUTXMLModel alloc] initWithXMLURLString:url];
     //OR
     //CUTXMLModel * model1 = [[CUTXMLModel alloc] initWithXMLURLString:url foundThisElementToken:token]];
     //CUTXMLModel * model2 = [[CUTXMLModel alloc] initWithXMLURLString:url foundThisElementTokenArray:data];
