@@ -22,7 +22,7 @@ CUTXMLParser Delegate Methods
 --
 		
 		//your xml,elements and characters 
- 	-(void)cutXMLParser :(NSXMLParser *)parser finisDataDictionary :(NSMutableDictionary *)dataDictionary elementNameArray :(NSMutableArray *)dataElementArray foundCharactersData :(NSMutableArray *)dataCharactersArray;
+ 	    -(void)cutXMLParser :(NSXMLParser *)parser finisDataDictionary :(NSMutableDictionary *)dataDictionary elementNameArray :(NSMutableArray *)dataElementArray foundCharactersData :(NSMutableArray *)dataCharactersArray;
 
     	-(void)cutXMLParser :(NSXMLParser *)parser elementNameToken :(NSString *)elementNameToken  foundCharacters :(NSString *)dataCharacters;
 		 
