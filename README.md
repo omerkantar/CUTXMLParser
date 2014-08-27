@@ -22,11 +22,16 @@ CUTXMLParser Delegate Methods
 --
 		
 		//your xml,elements and characters 
- 	    -(void)cutXMLParser :(NSXMLParser *)parser finisDataDictionary :(NSMutableDictionary *)dataDictionary elementNameArray :(NSMutableArray *)dataElementArray foundCharactersData :(NSMutableArray *)dataCharactersArray;
+		- (void)cutXMLParserDidStartDocument:(NSXMLParser *)parser;
+		
+		- (void)cutXMLParser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI attributes:(NSDictionary *)attributeDict;
+		- (void)cutXMLParser:(NSXMLParser *)parser foundCharacters:(NSString *)data
 
-    	-(void)cutXMLParser :(NSXMLParser *)parser elementNameToken :(NSString *)elementNameToken  foundCharacters :(NSString *)dataCharacters;
+ 	    - (void)cutXMLParser :(NSXMLParser *)parser finisDataDictionary :(NSMutableDictionary *)dataDictionary elementNameArray :(NSMutableArray *)dataElementArray foundCharactersData :(NSMutableArray *)dataCharactersArray;
+
+    	- (void)cutXMLParser :(NSXMLParser *)parser elementNameToken :(NSString *)elementNameToken  foundCharacters :(NSString *)dataCharacters;
 		 
-        -(void)cutXMLParser :(NSXMLParser *)parser elementTokenArray :(NSArray *)elementTokenArray foundCharactersArray :(NSMutableArray *)dataCharactersArray;
+        - (void)cutXMLParser :(NSXMLParser *)parser elementTokenArray :(NSArray *)elementTokenArray foundCharactersArray :(NSMutableArray *)dataCharactersArray;
 
 
   if u dont want to use delegate methods so create CUTXMLModel , its easy.
