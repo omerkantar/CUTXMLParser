@@ -11,6 +11,8 @@ First XML
 
 CUTXMLParser Create 
 =====
+	#import <CUTXMLParser/CUTXMLParser.h>
+	
         CUTXMLParser * cutXMLParser = [[CUTXMLParser alloc] init];
         [cutXMLParser setDelegate:self];
         [cutXMLParser startCutXMLParseWithURL:urlString];
@@ -38,6 +40,7 @@ CUTXMLParser Delegate Methods
 
 XMLParser Easy with CUTXMLModel 
 --
+	#import <CUTXMLParser/CUTXMLModel.h>
     //Create CUTXMLModel 
     
     CUTXMLModel   * model0 = [[CUTXMLModel alloc] initWithXMLURLString:url];
